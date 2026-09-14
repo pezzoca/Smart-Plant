@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Plant Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <h2 style="font-size: 16px;">Meu Vaso Inteligente</h2>
+      </div>
+      <div class="device-status">
+        <div class="dot"></div>
+        <span>Modo Demo</span>
+      </div>
+    </div>
+
+    <!-- Avatar e Status Emocional -->
+    <div class="plant-avatar-card">
+      <span class="badge-level" id="levelBadge">Nível 1</span>
+      <div class="plant-face" id="plantFace">😢</div>
+      <div class="plant-name">Lumina</div>
+      <div class="plant-stage" id="plantStatus">Com sede! Precisa de água</div>
+
+      <!-- Barra de Evolução -->
+      <div class="xp-section">
+        <div class="xp-header">
+          <span>XP da Planta</span>
+          <span id="xpText">20 / 100</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="xpBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status dos Sensores -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Umidade do Solo</div>
+        <div class="metric-value" id="moistureVal" style="color: #f87171;">18%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Saúde Geral</div>
+        <div class="metric-value" style="color: #4ade80;">94%</div>
+      </div>
+    </div>
+
+    <!-- Botão de Ação Automática / Manual -->
+    <button class="btn-water" id="waterBtn" onclick="waterPlant()">
+      💧 Regar Planta (+25 XP)
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
