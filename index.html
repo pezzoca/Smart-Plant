@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Plant Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <h2 style="font-size: 16px;">Smart Plant</h2>
+      </div>
+      <div class="device-status">
+        <div class="dot"></div>
+        <span>Modo Demo</span>
+      </div>
+    </div>
+
+    <!-- Avatar em SVG da Planta e Status Emocional -->
+    <div class="plant-avatar-card">
+      <span class="badge-level" id="levelBadge">Nível 1</span>
+      
+      <!-- Ilustração Animada da Planta -->
+      <div class="plant-svg-container">
+        <svg id="plantSvg" viewBox="0 0 100 120" width="110" height="130" class="sad">
+          <!-- Vaso de Planta -->
+          <path d="M 30 75 L 35 110 L 65 110 L 70 75 Z" fill="#d97706" stroke="#92400e" stroke-width="2"/>
+          <path d="M 26 67 L 74 67 L 74 75 L 26 75 Z" fill="#b45309" stroke="#78350f" stroke-width="2"/>
+          <!-- Terra -->
+          <ellipse cx="50" cy="69" rx="22" ry="4" fill="#451a03"/>
+          
+          <!-- Grupo da Planta para Animação de Movimento -->
+          <g id="plantGroup">
+            <!-- Caule -->
+            <path id="stem" d="M 50 68 Q 50 50 50 35" stroke="#15803d" stroke-width="4" fill="none" stroke-linecap="round"/>
+            
+            <!-- Folha Esquerda -->
+            <path id="leafLeft" class="animated-leaf-left" d="M 50 50 Q 25 45 32 30 Q 50 38 50 50" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+            
+            <!-- Folha Direita -->
+            <path id="leafRight" class="animated-leaf-right" d="M 50 42 Q 75 37 68 22 Q 50 30 50 42" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+            
+            <!-- Broto do Topo -->
+            <path id="sprout" d="M 50 35 Q 45 20 50 15 Q 55 20 50 35" fill="#4ade80" stroke="#15803d" stroke-width="1"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="plant-stage" id="plantStatus">Com sede! Precisa de água</div>
+
+      <!-- Barra de Evolução -->
+      <div class="xp-section">
+        <div class="xp-header">
+          <span>XP da Planta</span>
+          <span id="xpText">20 / 100</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="xpBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status dos Sensores -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Umidade do Solo</div>
+        <div class="metric-value" id="moistureVal" style="color: #f87171;">18%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Saúde Geral</div>
+        <div class="metric-value" style="color: #4ade80;">94%</div>
+      </div>
+    </div>
+
+    <!-- Botão de Ação -->
+    <button class="btn-water" id="waterBtn" onclick="waterPlant()">
+      💧 Regar Planta (+25 XP)
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
